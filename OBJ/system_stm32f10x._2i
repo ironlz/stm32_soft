@@ -1,0 +1,6 @@
+-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\APP -I..\STM32F10x_FWLib\inc -I..\CM3 -I..\HARDWARE\LED -I..\HARDWARE\KEY -I..\HARDWARE\OLED -I..\HARDWARE\USART2 -I..\MC20 -I..\HARDWARE\USART3 -I..\LCD5110 -I..\HARDWARE -I..\ds18b20 -I..\ds18b20
+-I C:\Users\Mrs.Tong\Desktop\35度2\北斗小哥哥35度设定\APP\RTE
+-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include
+-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include
+-D__UVISION_VERSION="515" -D_RTE_ -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER
+-o ..\obj\system_stm32f10x.o --omf_browse ..\obj\system_stm32f10x.crf --depend ..\obj\system_stm32f10x.d --feedback "..\OBJ\STM32MC20.fed" "system_stm32f10x.c"
