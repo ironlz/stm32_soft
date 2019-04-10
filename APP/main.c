@@ -237,7 +237,43 @@ void PID_out1()  //Êä³öPIDÔËËã½á¹ûµ½¸ºÔØ---Ã¿1ms±»µ÷ÓÃ1´Î
 
 int main(void)
 {
-
+	  // added by lizhen
+    /*
+		*the lcd will display like that
+		*      ======================
+	  *     |  Server:x      |
+		*     |  lo:xxx.xx          |
+		*     |  la:xxx.xx          |
+		*     |  T1:xx.xx/xx        |
+		*     |  T2:xx.xx/xx        |
+		*      ======================
+		*/
+		// first line format: F is failed, P is connected.
+	  char serverFormat[] = "Service:%c";
+		char serverStr[15];
+		char isServerOk = 'F';
+		
+		// second and third line format, for location: 
+		// lo:xxx.xx
+		// la:xxx.xx
+		char loFormat[] = "lo:%5.2f";// ¾­¶ÈµÄ¸ñÊ½»¯×Ö·û´®
+		char loStr[15];
+		char laFormat[] = "la:%5.2f";// Î³¶ÈµÄ¸ñÊ½»¯×Ö·û´®
+		char laStr[15];
+    float longtitude = 0.0f;
+    float latitude = 0.0f;
+		
+		// forth and fifth line format, for tempture:
+		char tOneFormat[] = "T1:%s/%s";
+		char tOneStr[15];
+		char tTwoFormat[] = "T2:%s/%s";
+		char tTwoStr[15];
+		float tOneReal = 0.0f;
+		float tOneSet = 0;
+		float tTwoReal = 0.0f;
+		float tTwoSet = 0;  
+	  // added end
+	
     char temtz[50];
 	  char temtz1[50];
     NVIC_Configuration();               //ÉèÖÃNVICÖÐ¶Ï·Ö×é2:2Î»ÇÀÕ¼ÓÅÏÈ¼¶£¬2Î»ÏìÓ¦ÓÅÏÈ¼¶
@@ -272,6 +308,7 @@ int main(void)
 							
     pwmout_0;//Í£Ö¹¼ÓÈÈ¡
     pwmout1_0;//Í£Ö¹¼ÓÈÈ¡
+    
     while(1)
     {
 
@@ -294,15 +331,16 @@ int main(void)
         delay_ms(2000);
 			  Timer3_init();
         while(1)
-        {							
+        {				
+                 LCD_Clear();					
 					 
 					      PID_Calc(); //pid¼ÆËã 
 					      PID_Calc1(); //pid¼ÆËã 
       					display_template_event();
 					      sprintf(lizhentemp, "w1:%s", wendu);
-			          LCD_Write_EnStr(0,4,(u8*)lizhentemp);		
+			          //LCD_Write_EnStr(0,4,(u8*)lizhentemp);		
 					      sprintf(lizhentemp1, "w2:%s", wendu1);
-			          LCD_Write_EnStr(7,4,(u8*)lizhentemp1);						
+			          //LCD_Write_EnStr(7,4,(u8*)lizhentemp1);						
 					      memset(TZwendu,0,30);
 								memset(temtz,0,50);
 								sprintf(temtz,"%d",SetTemp/10);		
@@ -311,9 +349,9 @@ int main(void)
 								memset(temtz,0,50);
 								sprintf(temtz,"%d",SetTemp%10);
 								strcat(TZwendu,temtz);
-								sprintf(wendu_tz,"t1:%s",TZwendu);							
+								sprintf(wendu_tz,"t1:%s",TZwendu);
 				      // sprintf(lizhentemp, "wendu: %s", wendu);
-		            LCD_Write_EnStr(0,5,(u8*)wendu_tz);				
+		            //LCD_Write_EnStr(0,5,(u8*)wendu_tz);				
 				      	memset(TZwendu1,0,30);
 								memset(temtz1,0,50);
 								sprintf(temtz1,"%d",SetTemp1/10);		
@@ -324,15 +362,32 @@ int main(void)
 								strcat(TZwendu1,temtz1);
 								sprintf(wendu_tz1,"t2:%s",TZwendu1);							
 				      // sprintf(lizhentemp, "wendu: %s", wendu);
-		            LCD_Write_EnStr(7,5,(u8*)wendu_tz1);
-				    	if(key_press==1)
+		            //LCD_Write_EnStr(7,5,(u8*)wendu_tz1);
+				    	/*if(key_press==1)
 				        LCD_Write_EnStr(0,0,"One ");
 				    	else
 						    LCD_Write_EnStr(0,0,"Two");
-					
+							*/
+								// ´¦ÀíLCDÒªÏÔÊ¾µÄÐÅÏ¢
+								sprintf(serverStr, serverFormat, isServerOk);// first line
+								LCD_Write_EnStr(0, 0, (unsigned char*)serverStr);
+								// second line
+								sprintf(loStr, loFormat, longtitude);
+								LCD_Write_EnStr(0, 1, (unsigned char*)loStr);
+								// third line
+								sprintf(laStr, laFormat, latitude);
+								LCD_Write_EnStr(0, 2, (unsigned char*)laStr);
+								// forth line
+								sprintf(tOneStr, tOneFormat, wendu, TZwendu);
+								LCD_Write_EnStr(0, 3, (unsigned char*)tOneStr);
+								// fifth line
+								sprintf(tTwoStr, tTwoFormat, wendu1, TZwendu1);
+								LCD_Write_EnStr(0, 4, (unsigned char*)tTwoStr);
+								
+								
 								Display();
 					      delay_ms(2000);
-            if(USART3_RX_STA&0X8000)		//½ÓÊÕµ½Êý¾Ý´®¿Ú3ºÍGPSÍ¨ÐÅ ´®¿Ú2ºÍGPRSÍ¨ÐÅ
+            /*if(USART3_RX_STA&0X8000)		//½ÓÊÕµ½Êý¾Ý´®¿Ú3ºÍGPSÍ¨ÐÅ ´®¿Ú2ºÍGPRSÍ¨ÐÅ
             {
                 printf("#REV GPS DATA:");
                 printf((const char*)USART3_RX_BUF,"#\r\n");
@@ -490,7 +545,7 @@ int main(void)
                 printf((const char*)USART2_RX_BUF,"\r\n");
                 USART2_RX_STA=0;
             }
-            delay_ms(2000);
+            delay_ms(2000);*/
         }
     }
 }

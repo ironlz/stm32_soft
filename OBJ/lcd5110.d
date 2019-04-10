@@ -3,7 +3,7 @@
 ..\obj\lcd5110.o: ..\STM32F10x_FWLib\inc\stm32f10x_GPIO.h
 ..\obj\lcd5110.o: ..\APP\stm32f10x.h
 ..\obj\lcd5110.o: ..\SYSTEM\sys\core_cm3.h
-..\obj\lcd5110.o: F:\YT\1\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\lcd5110.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\lcd5110.o: ..\APP\system_stm32f10x.h
 ..\obj\lcd5110.o: ..\APP\stm32f10x_conf.h
 ..\obj\lcd5110.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h
@@ -33,4 +33,4 @@
 ..\obj\lcd5110.o: ..\LCD5110\Pixel_EN.h
 ..\obj\lcd5110.o: ..\SYSTEM\delay\delay.h
 ..\obj\lcd5110.o: ..\SYSTEM\sys\sys.h
-..\obj\lcd5110.o: F:\YT\1\ARM\ARMCC\Bin\..\include\string.h
+..\obj\lcd5110.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

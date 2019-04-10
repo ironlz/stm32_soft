@@ -4,7 +4,7 @@
 ..\obj\pid.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h
 ..\obj\pid.o: ..\APP\stm32f10x.h
 ..\obj\pid.o: ..\SYSTEM\sys\core_cm3.h
-..\obj\pid.o: F:\YT\1\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\pid.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\pid.o: ..\APP\system_stm32f10x.h
 ..\obj\pid.o: ..\APP\stm32f10x_conf.h
 ..\obj\pid.o: ..\STM32F10x_FWLib\inc\stm32f10x_bkp.h
@@ -32,4 +32,4 @@
 ..\obj\pid.o: ..\HARDWARE\USART2\usart2.h
 ..\obj\pid.o: ..\SYSTEM\sys\sys.h
 ..\obj\pid.o: ..\HARDWARE\USART3\usart3.h
-..\obj\pid.o: F:\YT\1\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\pid.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

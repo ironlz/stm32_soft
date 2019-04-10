@@ -1,12 +1,12 @@
 ..\obj\main.o: main.c
-..\obj\main.o: F:\YT\1\ARM\ARMCC\Bin\..\include\stdlib.h
-..\obj\main.o: F:\YT\1\ARM\ARMCC\Bin\..\include\stdio.h
-..\obj\main.o: F:\YT\1\ARM\ARMCC\Bin\..\include\string.h
+..\obj\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 ..\obj\main.o: ..\SYSTEM\delay\delay.h
 ..\obj\main.o: ..\SYSTEM\sys\sys.h
 ..\obj\main.o: ..\APP\stm32f10x.h
 ..\obj\main.o: ..\SYSTEM\sys\core_cm3.h
-..\obj\main.o: F:\YT\1\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\main.o: ..\APP\system_stm32f10x.h
 ..\obj\main.o: ..\APP\stm32f10x_conf.h
 ..\obj\main.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h

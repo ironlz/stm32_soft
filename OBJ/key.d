@@ -3,7 +3,7 @@
 ..\obj\key.o: ..\SYSTEM\sys\sys.h
 ..\obj\key.o: ..\APP\stm32f10x.h
 ..\obj\key.o: ..\SYSTEM\sys\core_cm3.h
-..\obj\key.o: F:\YT\1\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\key.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\key.o: ..\APP\system_stm32f10x.h
 ..\obj\key.o: ..\APP\stm32f10x_conf.h
 ..\obj\key.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h

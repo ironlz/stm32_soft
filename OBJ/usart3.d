@@ -2,7 +2,7 @@
 ..\obj\usart3.o: ..\SYSTEM\sys\sys.h
 ..\obj\usart3.o: ..\APP\stm32f10x.h
 ..\obj\usart3.o: ..\SYSTEM\sys\core_cm3.h
-..\obj\usart3.o: F:\YT\1\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\usart3.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\usart3.o: ..\APP\system_stm32f10x.h
 ..\obj\usart3.o: ..\APP\stm32f10x_conf.h
 ..\obj\usart3.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h
@@ -30,4 +30,4 @@
 ..\obj\usart3.o: ..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h
 ..\obj\usart3.o: ..\STM32F10x_FWLib\inc\misc.h
 ..\obj\usart3.o: ..\HARDWARE\USART3\usart3.h
-..\obj\usart3.o: F:\YT\1\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\usart3.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

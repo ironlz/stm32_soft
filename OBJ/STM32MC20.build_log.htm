@@ -3,30 +3,40 @@
 <pre>
 <h1>礦ision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: μVision V5.14.0.0
+IDE-Version: μVision V5.15
 Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: dsry fgj, dfj, LIC=YA301-C44YZ-NA5DU-SLHX9-AVNYU-02144
+License Information: li zhen, null, LIC=P6FWF-6EUC5-TJC6H-W8MRC-8SH4F-14YIJ
  
 Tool Versions:
-Toolchain:       MDK-ARM Standard  Version: 5.14.0.0
-Toolchain Path:  F:\YT\1\ARM\ARMCC\Bin
-C Compiler:      Armcc.exe V5.05 update 1 (build 106)
-Assembler:       Armasm.exe V5.05 update 1 (build 106)
-Linker/Locator:  ArmLink.exe V5.05 update 1 (build 106)
-Library Manager: ArmAr.exe V5.05 update 1 (build 106)
-Hex Converter:   FromElf.exe V5.05 update 1 (build 106)
-CPU DLL:         SARMCM3.DLL V5.14.0.0
+Toolchain:       MDK-ARM Professional  Version: 5.15.0
+Toolchain Path:  D:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.05 update 2 (build 169)
+Assembler:       Armasm.exe V5.05 update 2 (build 169)
+Linker/Locator:  ArmLink.exe V5.05 update 2 (build 169)
+Library Manager: ArmAr.exe V5.05 update 2 (build 169)
+Hex Converter:   FromElf.exe V5.05 update 2 (build 169)
+CPU DLL:         SARMCM3.DLL V5.15.0
 Dialog DLL:      DARMSTM.DLL V1.65.0.0
-Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V2.0.14.0_KEIL
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V2.0.15.0_KEIL
 Dialog DLL:      TARMSTM.DLL V1.64.0.0
  
 <h2>Project:</h2>
-C:\Users\YT\Desktop\单片机小哥哥pid3\单片机小哥哥pid\北斗小哥哥35度设定\APP\GSM.uvprojx
-Project File Date:  03/29/2019
+D:\文件\林彤\最终\stm32_soft\APP\GSM.uvprojx
+Project File Date:  04/09/2019
 
 <h2>Output:</h2>
+*** Using Compiler 'V5.05 update 2 (build 169)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
 Rebuild target 'PID'
 compiling main.c...
+main.c(271): warning:  #177-D: variable "tOneReal" was declared but never referenced
+                float tOneReal = 0.0f;
+main.c(272): warning:  #177-D: variable "tOneSet" was declared but never referenced
+                float tOneSet = 0;
+main.c(273): warning:  #177-D: variable "tTwoReal" was declared but never referenced
+                float tTwoReal = 0.0f;
+main.c(274): warning:  #177-D: variable "tTwoSet" was declared but never referenced
+                float tTwoSet = 0;  
+main.c: 4 warnings, 0 errors
 compiling stm32f10x_it.c...
 compiling system_stm32f10x.c...
 compiling key.c...
@@ -51,27 +61,26 @@ compiling stm32f10x_exti.c...
 compiling mc20.c...
 compiling PID.C...
 linking...
-Program Size: Code=28830 RO-data=1942 RW-data=92 ZI-data=6124  
+Program Size: Code=27470 RO-data=1982 RW-data=92 ZI-data=5900  
 FromELF: creating hex file...
-"..\OBJ\STM32MC20.axf" - 0 Error(s), 0 Warning(s).
+"..\OBJ\STM32MC20.axf" - 0 Error(s), 4 Warning(s).
 
 <h2>Software Packages used:</h2>
 
 Package Vendor: ARM
-                http://www.keil.com/pack/ARM.CMSIS.4.2.0.pack
-                ARM::CMSIS:CORE:3.40.0
+                http://www.keil.com/pack/ARM.CMSIS.4.3.0.pack
+                ARM::CMSIS:CORE:4.1.0
                 CMSIS (Cortex Microcontroller Software Interface Standard)
-   * Component: CORE Version: 3.40.0
+   * Component: CORE Version: 4.1.0
 
 <h2>Collection of Component include folders:</h2>
-  C:\Users\YT\Desktop\单片机小哥哥pid3\单片机小哥哥pid\北斗小哥哥35度设定\APP\RTE
-  F:\YT\1\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include
-  F:\YT\1\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include
+  D:\文件\林彤\最终\stm32_soft\APP\RTE
+  D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\CMSIS\Include
+  D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include
 
 <h2>Collection of Component Files used:</h2>
 
-   * Component: ARM::CMSIS:CORE:3.40.0
-      Source file:   CMSIS\UserCodeTemplates\ARM\ITM_Retarget.c
+   * Component: ARM::CMSIS:CORE:4.1.0
 </pre>
 </body>
 </html>
